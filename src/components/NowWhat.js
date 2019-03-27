@@ -68,7 +68,9 @@ class NowWhat extends Component {
               <ListItemText>Temperature?</ListItemText>
             </ListItem>
             <ListItem>
-              <ListItemText>{Math.round(temperatureinFahrenheit)}</ListItemText>
+              <ListItemText>
+                <b>{Math.round(temperatureinFahrenheit)}</b>
+              </ListItemText>
             </ListItem>
             <hr />
             <ListItem>

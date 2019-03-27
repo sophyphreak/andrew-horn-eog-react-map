@@ -68,7 +68,7 @@ class NowWhat extends Component {
               <ListItemText>Temperature?</ListItemText>
             </ListItem>
             <ListItem>
-              <ListItemText>{temperatureinFahrenheit}</ListItemText>
+              <ListItemText>{Math.round(temperatureinFahrenheit)}</ListItemText>
             </ListItem>
             <hr />
             <ListItem>
@@ -76,7 +76,7 @@ class NowWhat extends Component {
             </ListItem>
             <ListItem>
               <ListItemText>
-                <b>{latitude}</b>
+                <b>{Math.round(latitude * 10) / 10}</b>
               </ListItemText>
             </ListItem>{" "}
             <hr />
@@ -85,7 +85,7 @@ class NowWhat extends Component {
             </ListItem>
             <ListItem>
               <ListItemText>
-                <b>{longitude}</b>
+                <b>{Math.round(longitude * 10) / 10}</b>
               </ListItemText>
             </ListItem>{" "}
             <hr />
@@ -94,7 +94,7 @@ class NowWhat extends Component {
             </ListItem>
             <ListItem>
               <ListItemText>
-                <b>{(moment() - timestamp) / 1000000}</b>
+                <b>{Math.round((moment() - timestamp) / 1000000)} second ago</b>
               </ListItemText>
             </ListItem>
           </List>

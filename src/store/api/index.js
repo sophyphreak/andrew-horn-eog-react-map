@@ -1,5 +1,5 @@
-import findLocationByLatLng from "./findLocationByLatLng";
-import findWeatherbyId from "./findWeatherById";
+import findLocationByLatLng from './findLocationByLatLng';
+import findWeatherbyId from './findWeatherById';
 
 export default {
   findLocationByLatLng,

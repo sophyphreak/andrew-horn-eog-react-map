@@ -1,4 +1,4 @@
-import "isomorphic-fetch";
+import 'isomorphic-fetch';
 
 const findDroneLocation = async () => {
   const response = await fetch(

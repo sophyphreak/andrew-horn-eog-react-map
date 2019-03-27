@@ -1,4 +1,4 @@
-import "isomorphic-fetch";
+import 'isomorphic-fetch';
 
 const findWeatherbyId = async id => {
   // Using the create-react-app's proxy for CORS issues

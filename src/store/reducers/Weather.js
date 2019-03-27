@@ -1,11 +1,11 @@
-import * as actions from "../actions";
+import * as actions from '../actions';
 
 const initialState = {
   loading: false,
   weatherId: null,
-  name: "",
-  temperature: "",
-  weather_state_name: "",
+  name: '',
+  temperature: '',
+  weather_state_name: '',
   latitude: null,
   longitude: null,
   data: {}
@@ -23,11 +23,11 @@ const weatherIDReceived = (state, action) => {
 
 const weatherDataRecevied = (state, action) => {
   const { data } = action;
-  if (!data["consolidated_weather"]) return state;
+  if (!data['consolidated_weather']) return state;
   const weather = data.consolidated_weather[0];
   const { weather_state_name, the_temp } = weather;
   const { latt_long, title: name } = data;
-  const [latitude, longitude] = latt_long.split(",");
+  const [latitude, longitude] = latt_long.split(',');
 
   return {
     ...state,
@@ -50,6 +50,6 @@ const handlers = {
 
 export default (state = initialState, action) => {
   const handler = handlers[action.type];
-  if (typeof handler === "undefined") return state;
+  if (typeof handler === 'undefined') return state;
   return handler(state, action);
 };

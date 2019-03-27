@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import * as actions from "../store/actions";
-import LinearProgress from "@material-ui/core/LinearProgress";
-import ChipRaw from "@material-ui/core/Chip";
-import { withStyles } from "@material-ui/core/styles";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import * as actions from '../store/actions';
+import LinearProgress from '@material-ui/core/LinearProgress';
+import ChipRaw from '@material-ui/core/Chip';
+import { withStyles } from '@material-ui/core/styles';
 
 const cardStyles = theme => ({
   root: {

@@ -1,6 +1,6 @@
-import { takeEvery, call, put, cancel, all } from "redux-saga/effects";
-import API from "../api";
-import * as actions from "../actions";
+import { takeEvery, call, put, cancel, all } from 'redux-saga/effects';
+import API from '../api';
+import * as actions from '../actions';
 
 /*
   1. The weather service requires us to make a search by lat/lng to find its

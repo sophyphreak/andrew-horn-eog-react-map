@@ -1,8 +1,8 @@
-import { createStore, applyMiddleware, combineReducers } from "redux";
-import { composeWithDevTools } from "redux-devtools-extension";
-import createSagaMiddleware from "redux-saga";
-import sagas from "./sagas";
-import weatherReducer from "./reducers/Weather";
+import { createStore, applyMiddleware, combineReducers } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import createSagaMiddleware from 'redux-saga';
+import sagas from './sagas';
+import weatherReducer from './reducers/Weather';
 
 export default () => {
   const rootReducer = combineReducers({

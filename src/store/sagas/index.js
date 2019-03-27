@@ -1,4 +1,4 @@
-import WeatherSagas from "./Weather";
-import ApiErrors from "./ApiErrors";
+import WeatherSagas from './Weather';
+import ApiErrors from './ApiErrors';
 
 export default [...ApiErrors, ...WeatherSagas];

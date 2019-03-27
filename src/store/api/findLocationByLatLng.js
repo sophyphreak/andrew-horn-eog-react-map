@@ -1,7 +1,7 @@
-import "isomorphic-fetch";
+import 'isomorphic-fetch';
 
 const findLocationByLatLong = async (latitude, longitude) => {
-  const latlon = [latitude, longitude].join(",");
+  const latlon = [latitude, longitude].join(',');
   // Using the create-react-app's proxy for CORS issues
   const response = await fetch(
     `https://react-assessment-api.herokuapp.com/api/weather/location/search/?lattlong=${latlon}`

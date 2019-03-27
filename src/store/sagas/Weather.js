@@ -17,6 +17,8 @@ import * as actions from "../actions";
 
 */
 
+const delay = ms => new Promise(res => setTimeout(res, ms));
+
 function* watchWeatherIdReceived(action) {
   const { id } = action;
   const { error, data } = yield call(API.findWeatherbyId, id);
@@ -82,12 +84,18 @@ function* watchDroneDataReceived(action) {
   yield put({ type: actions.WEATHER_ID_RECEIVED, id: location });
 }
 
+function* watchWeatherDataReceived() {
+  yield delay(3500);
+  yield put({ type: actions.FETCH_DRONE_DATA });
+}
+
 function* watchAppLoad() {
   yield all([
     takeEvery(actions.FETCH_DRONE_DATA, watchFetchDroneData),
     takeEvery(actions.DRONE_DATA_RECEIVED, watchDroneDataReceived),
     takeEvery(actions.FETCH_WEATHER, watchFetchWeather),
-    takeEvery(actions.WEATHER_ID_RECEIVED, watchWeatherIdReceived)
+    takeEvery(actions.WEATHER_ID_RECEIVED, watchWeatherIdReceived),
+    takeEvery(actions.WEATHER_DATA_RECEIVED, watchWeatherDataReceived)
   ]);
 }
 

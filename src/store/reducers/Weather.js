@@ -41,14 +41,11 @@ const weatherDataRecevied = (state, action) => {
   if (!data["consolidated_weather"]) return state;
   const weather = data.consolidated_weather[0];
   const { weather_state_name, the_temp } = weather;
-  const { latt_long, title: name } = data;
-  const [latitude, longitude] = latt_long.split(",");
+  const { title: name } = data;
 
   return {
     ...state,
     loading: false,
-    latitude,
-    longitude,
     temperatureinCelsius: the_temp,
     temperatureinFahrenheit: toF(the_temp),
     weather_state_name,

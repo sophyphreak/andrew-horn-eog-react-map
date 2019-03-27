@@ -4,11 +4,8 @@ import * as actions from "../store/actions";
 import Card from "@material-ui/core/Card";
 import CardHeaderRaw from "@material-ui/core/CardHeader";
 import CardContent from "@material-ui/core/CardContent";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
 import { withStyles } from "@material-ui/core/styles";
-import moment from "moment";
+import MapWithAMarker from "./Map";
 
 const cardStyles = theme => ({
   root: {
@@ -31,75 +28,19 @@ class NowWhat extends Component {
     this.props.onLoad();
   }
   render() {
-    const {
-      classes,
-      loading,
-      name,
-      temperatureinFahrenheit,
-      weather_state_name,
-      latitude,
-      longitude,
-      timestamp
-    } = this.props;
+    const { classes, latitude, longitude } = this.props;
     return (
       <Card className={classes.card}>
-        <CardHeader title="Dashboard Visualization" />
+        <CardHeader title="Map Visualization" />
         <CardContent>
-          <List>
-            <ListItem>
-              <ListItemText>Where's the drone?</ListItemText>
-            </ListItem>
-            <ListItem>
-              <ListItemText>
-                <b>{name}</b>
-              </ListItemText>
-            </ListItem>
-            <hr />
-            <ListItem>
-              <ListItemText>What's the weather like?</ListItemText>
-            </ListItem>
-            <ListItem>
-              <ListItemText>
-                <b>{weather_state_name}</b>
-              </ListItemText>
-            </ListItem>
-            <hr />
-            <ListItem>
-              <ListItemText>Temperature?</ListItemText>
-            </ListItem>
-            <ListItem>
-              <ListItemText>
-                <b>{Math.round(temperatureinFahrenheit)}</b>
-              </ListItemText>
-            </ListItem>
-            <hr />
-            <ListItem>
-              <ListItemText>Latitude?</ListItemText>
-            </ListItem>
-            <ListItem>
-              <ListItemText>
-                <b>{Math.round(latitude * 10) / 10}</b>
-              </ListItemText>
-            </ListItem>{" "}
-            <hr />
-            <ListItem>
-              <ListItemText>Longitude?</ListItemText>
-            </ListItem>
-            <ListItem>
-              <ListItemText>
-                <b>{Math.round(longitude * 10) / 10}</b>
-              </ListItemText>
-            </ListItem>{" "}
-            <hr />
-            <ListItem>
-              <ListItemText>When did it last check in?</ListItemText>
-            </ListItem>
-            <ListItem>
-              <ListItemText>
-                <b>{Math.round((moment() - timestamp) / 1000000)} second ago</b>
-              </ListItemText>
-            </ListItem>
-          </List>
+          <MapWithAMarker
+            containerElement={<div style={{ height: `400px` }} />}
+            mapElement={<div style={{ height: `100%` }} />}
+            center={[29.7182469, -95.40052039999999]}
+            zoom={5}
+            latitude={latitude}
+            longitude={longitude}
+          />
         </CardContent>
       </Card>
     );

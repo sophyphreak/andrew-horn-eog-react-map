@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import * as actions from '../store/actions';
-import LinearProgress from '@material-ui/core/LinearProgress';
-import ChipRaw from '@material-ui/core/Chip';
-import { withStyles } from '@material-ui/core/styles';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import * as actions from "../store/actions";
+import LinearProgress from "@material-ui/core/LinearProgress";
+import ChipRaw from "@material-ui/core/Chip";
+import { withStyles } from "@material-ui/core/styles";
 
 const cardStyles = theme => ({
   root: {
@@ -53,9 +53,7 @@ const mapState = (state, ownProps) => {
 const mapDispatch = dispatch => ({
   onLoad: () =>
     dispatch({
-      type: actions.FETCH_WEATHER,
-      longitude: -95.3698,
-      latitude: 29.7604
+      type: actions.FETCH_DRONE_DATA
     })
 });
 

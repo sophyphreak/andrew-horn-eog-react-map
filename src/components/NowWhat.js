@@ -47,16 +47,14 @@ class NowWhat extends Component {
   }
 }
 
-const mapState = (state, ownProps) => {
+const mapState = state => {
   const {
     loading,
     name,
     weather_state_name,
-    temperatureinFahrenheit,
-    latitude,
-    longitude,
-    timestamp
+    temperatureinFahrenheit
   } = state.weather;
+  const { latitude, longitude, timestamp } = state.drone;
   return {
     loading,
     name,
@@ -71,7 +69,7 @@ const mapState = (state, ownProps) => {
 const mapDispatch = dispatch => ({
   onLoad: () =>
     dispatch({
-      type: actions.FETCH_DRONE_DATA
+      type: actions.FETCH_DATA
     })
 });
 

@@ -36,7 +36,7 @@ function* watchDroneDataReceived(action) {
 
 function* watchAppLoad() {
   yield all([
-    takeEvery(actions.FETCH_DRONE_DATA, watchFetchDroneData),
+    takeEvery(actions.FETCH_DATA, watchFetchDroneData),
     takeEvery(actions.DRONE_DATA_RECEIVED, watchDroneDataReceived)
   ]);
 }

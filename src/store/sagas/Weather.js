@@ -54,7 +54,7 @@ function* watchFetchWeather(action) {
 
 function* watchWeatherDataReceived() {
   yield delay(3500);
-  yield put({ type: actions.FETCH_DRONE_DATA });
+  yield put({ type: actions.FETCH_DATA });
 }
 
 function* watchAppLoad() {

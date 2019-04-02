@@ -34,11 +34,11 @@ function* watchDroneDataReceived(action) {
   yield put({ type: actions.WEATHER_ID_RECEIVED, id: location });
 }
 
-function* watchWeatherLoad() {
+function* watchAppLoad() {
   yield all([
     takeEvery(actions.FETCH_DRONE_DATA, watchFetchDroneData),
     takeEvery(actions.DRONE_DATA_RECEIVED, watchDroneDataReceived)
   ]);
 }
 
-export default [watchWeatherLoad];
+export default [watchAppLoad];

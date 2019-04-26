@@ -3,8 +3,8 @@ import React from "react";
 const Marker = ({ text }) => (
   <div
     style={{
-      color: "white",
-      background: "grey",
+      color: "black",
+      background: "yellow",
       padding: "15px 10px",
       display: "inline-flex",
       textAlign: "center",

@@ -17,11 +17,19 @@ const cardStyles = theme => ({
 });
 const CardHeader = withStyles(cardStyles)(CardHeaderRaw);
 
-const styles = {
+const styles = theme => ({
   card: {
-    margin: "5% 25%"
+    [theme.breakpoints.down("sm")]: {
+      margin: "5% 0%"
+    },
+    [theme.breakpoints.up("md")]: {
+      margin: "5% 15%"
+    }
+    // [theme.breakpoints.up('lg')]: {
+    //   margin: "5% 15%"
+    // },
   }
-};
+});
 
 class Main extends Component {
   componentDidMount() {
@@ -37,7 +45,7 @@ class Main extends Component {
             containerElement={<div style={{ height: `400px` }} />}
             mapElement={<div style={{ height: `100%` }} />}
             center={[29.7182469, -95.40052039999999]}
-            zoom={5}
+            zoom={6}
             latitude={latitude}
             longitude={longitude}
           />

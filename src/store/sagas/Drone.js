@@ -2,6 +2,8 @@ import { takeEvery, call, put, cancel, all } from "redux-saga/effects";
 import API from "../api";
 import * as actions from "../actions";
 
+const delay = ms => new Promise(res => setTimeout(res, ms));
+
 function* watchFetchDroneData() {
   const { error, data } = yield call(API.findDroneLocation);
   if (error) {
@@ -31,7 +33,8 @@ function* watchDroneDataReceived(action) {
     yield cancel();
     return;
   }
-  yield put({ type: actions.WEATHER_ID_RECEIVED, id: location });
+  yield delay(3500);
+  yield put({ type: actions.FETCH_DATA });
 }
 
 function* watchAppLoad() {

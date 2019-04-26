@@ -48,21 +48,10 @@ class NowWhat extends Component {
 }
 
 const mapState = state => {
-  const {
-    loading,
-    name,
-    weather_state_name,
-    temperatureinFahrenheit
-  } = state.weather;
-  const { latitude, longitude, timestamp } = state.drone;
+  const { latitude, longitude } = state.drone;
   return {
-    loading,
-    name,
-    weather_state_name,
-    temperatureinFahrenheit,
     latitude,
-    longitude,
-    timestamp
+    longitude
   };
 };
 

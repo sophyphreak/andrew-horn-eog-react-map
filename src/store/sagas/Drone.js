@@ -14,25 +14,7 @@ function* watchFetchDroneData() {
   yield put({ type: actions.DRONE_DATA_RECEIVED, data });
 }
 
-function* watchDroneDataReceived(action) {
-  const { latitude, longitude } = action.data.data[0];
-  const { error, data } = yield call(
-    API.findLocationByLatLng,
-    latitude,
-    longitude
-  );
-  if (error) {
-    console.log({ error });
-    yield put({ type: actions.API_ERROR, code: error.code });
-    yield cancel();
-    return;
-  }
-  const location = data[0] ? data[0].woeid : false;
-  if (!location) {
-    yield put({ type: actions.API_ERROR });
-    yield cancel();
-    return;
-  }
+function* watchDroneDataReceived() {
   yield delay(3500);
   yield put({ type: actions.FETCH_DATA });
 }

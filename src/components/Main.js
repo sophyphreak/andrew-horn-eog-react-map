@@ -45,7 +45,7 @@ class Main extends Component {
             containerElement={<div style={{ height: `400px` }} />}
             mapElement={<div style={{ height: `100%` }} />}
             center={[29.7182469, -95.40052039999999]}
-            zoom={6}
+            zoom={5}
             latitude={latitude}
             longitude={longitude}
           />

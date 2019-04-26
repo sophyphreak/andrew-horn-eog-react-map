@@ -23,7 +23,7 @@ const styles = {
   }
 };
 
-class NowWhat extends Component {
+class Main extends Component {
   componentDidMount() {
     this.props.onLoad();
   }
@@ -65,4 +65,4 @@ const mapDispatch = dispatch => ({
 export default connect(
   mapState,
   mapDispatch
-)(withStyles(styles)(NowWhat));
+)(withStyles(styles)(Main));

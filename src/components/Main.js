@@ -25,9 +25,6 @@ const styles = theme => ({
     [theme.breakpoints.up("md")]: {
       margin: "5% 15%"
     }
-    // [theme.breakpoints.up('lg')]: {
-    //   margin: "5% 15%"
-    // },
   }
 });
 
